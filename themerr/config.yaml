@@ -1,5 +1,5 @@
 name: Themerr
-version: "2026.1121.140404"
+version: "2026.1122.140404"
 slug: themerr
 description: Standalone Themerr service for Jellyfin.
 url: https://github.com/Themerr/Themerr
@@ -11,12 +11,10 @@ boot: auto
 init: false
 
 map:
-  - type: addon_config
-    read_only: false
+  - type: data
     path: /config
   - type: ssl
     read_only: true
-    path: /run/secrets
 
 environment:
   THEMERR_TOKEN_KEY_FILE: /run/secrets/themerr_token_key
