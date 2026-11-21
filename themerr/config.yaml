@@ -1,0 +1,22 @@
+name: Themerr
+version: "1.0.0"
+slug: themerr
+description: Automatically manages theme music for Jellyfin using ThemerrDB.
+url: https://github.com/Themerr/Themerr
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+init: false
+ports:
+  9494/tcp: 9494
+  9495/tcp: 9495
+ports_description:
+  9494/tcp: Themerr web interface
+  9495/tcp: Jellyfin connector repository (HTTP)
+map:
+  - type: addon_config
+    read_only: false
+    path: /config
+image: ghcr.io/peeett87/ha-addon-themerr-{arch}
