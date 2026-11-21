@@ -1,8 +1,5 @@
-
-
-
 name: Themerr
-version: "2026.1109.170140"
+version: "2026.1121.140404"
 slug: themerr
 description: Standalone Themerr service for Jellyfin.
 url: https://github.com/Themerr/Themerr
@@ -22,19 +19,14 @@ map:
     path: /run/secrets
 
 environment:
-  THEMERR_TOKEN_KEY_FILE: /run/secrets/themerr-tokens.key
+  THEMERR_TOKEN_KEY_FILE: /run/secrets/themerr_token_key
   TZ: Europe/Amsterdam
 
 ports:
   9494/tcp: 9494
   9495/tcp: 9495
 ports_description:
-  9494/tcp: Themerr web interface (HTTPS)
-  9495/tcp: Jellyfin connector repository (HTTP)
+  9494/tcp: Themerr web interface
+  9495/tcp: Jellyfin connector repository
 
 image: ghcr.io/peeett87/ha-addon-themerr-{arch}
-
-
-
-
-
