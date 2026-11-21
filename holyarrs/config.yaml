@@ -1,0 +1,33 @@
+name: "HolyArrs"
+version: "1.2.0"
+slug: "holyarrs"
+description: "HolyArrs - films, series en muziek beheren"
+url: "https://github.com/HolyArrs/HolyArrs"
+image: "holyarrs/holyarrs"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: application
+boot: auto
+init: false
+ports:
+  6262/tcp: 6262
+ports_description:
+  6262/tcp: "HolyArrs webinterface"
+map:
+  - type: addon_config
+    path: /config
+    read_only: false
+  - type: media
+    path: /media
+    read_only: false
+  - type: share
+    path: /share
+    read_only: false
+environment:
+  PUID: "0"
+  PGID: "0"
+  TZ: "Europe/Amsterdam"
+options: {}
+schema: {}
